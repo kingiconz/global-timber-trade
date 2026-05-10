@@ -67,7 +67,7 @@ function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15 }}
-            className="font-display text-5xl sm:text-6xl lg:text-8xl mt-6 max-w-5xl leading-[1.02]"
+            className="font-display text-4xl sm:text-5xl lg:text-6xl mt-6 max-w-4xl leading-[1.05]"
           >
             Premium Timber & <br />
             <span className="text-gold-gradient italic">Charcoal Exports</span> for Global Markets
@@ -165,7 +165,7 @@ function HomePage() {
             </Reveal>
           </div>
           <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((p) => (
+            {products.slice(0, 8).map((p) => (
               <StaggerItem key={p.slug}>
                 <ProductCard product={p} onOpen={setActive} />
               </StaggerItem>
