@@ -156,12 +156,22 @@
     border-radius: 2px;
   }
 
-  /* Subtle Adinkra motif tile usable as a section background accent */
+  /* Authentic Adinkra motif tile (image-based) used as a section accent */
   .adinkra-tile {
-    background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160' fill='none' stroke='%23c9a84c' stroke-opacity='0.5' stroke-width='1'%3E%3Ccircle cx='40' cy='40' r='6'/%3E%3Ccircle cx='40' cy='40' r='12'/%3E%3Cpath d='M110 30 q-8 10 0 20 q8 -10 0 -20 z M124 30 q8 10 0 20 q-8 -10 0 -20 z'/%3E%3Cpath d='M50 110 q-14 0 -14 14 q0 14 14 14 q14 0 14 -14 q0 -8 -8 -8 q-8 0 -8 8'/%3E%3Cpath d='M120 120 l5 -14 l5 14 l14 5 l-14 5 l-5 14 l-5 -14 l-14 -5 z'/%3E%3C/svg%3E");
-    background-size: 160px 160px;
+    background-image: url("/adinkra-motifs.png");
+    background-size: 280px 280px;
     background-repeat: repeat;
-    opacity: 0.06;
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(5deg) brightness(0.9);
+    mix-blend-mode: screen;
+    opacity: 0.08;
+  }
+  .adinkra-tile-strong {
+    background-image: url("/adinkra-motifs.png");
+    background-size: 240px 240px;
+    background-repeat: repeat;
+    filter: invert(1) sepia(1) saturate(6) hue-rotate(5deg) brightness(0.95);
+    mix-blend-mode: screen;
+    opacity: 0.18;
   }
 
   .adinkra-fade-mask {
