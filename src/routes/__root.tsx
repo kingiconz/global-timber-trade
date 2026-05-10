@@ -12,7 +12,6 @@ import appCss from "../styles.css?url";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import { Cursor } from "@/components/site/Cursor";
 
 function NotFoundComponent() {
   return (
@@ -65,10 +64,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
       { name: "description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets with reliability and excellence." },
-      { property: "og:title", content: "Black Woodpecker Limited — Premium Timber & Charcoal Exports" },
-      { property: "og:description", content: "Global exporter of premium hardwood timber and charcoal." },
+      { property: "og:title", content: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
+      { property: "og:description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets with reliability and excellence." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
+      { name: "twitter:description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets with reliability and excellence." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/46a11c9c-2cdb-4cfe-8c06-85e6d065c3a3/id-preview-dedda954--a4e77bd6-2fa4-47ff-bec3-cc36b0687391.lovable.app-1778383444003.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/46a11c9c-2cdb-4cfe-8c06-85e6d065c3a3/id-preview-dedda954--a4e77bd6-2fa4-47ff-bec3-cc36b0687391.lovable.app-1778383444003.png" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
@@ -103,7 +106,6 @@ function RootComponent() {
         </main>
         <Footer />
         <FloatingActions />
-        <Cursor />
       </div>
     </QueryClientProvider>
   );
