@@ -8,9 +8,9 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <span className="h-9 w-9 inline-flex items-center justify-center rounded-sm bg-gradient-gold text-primary-foreground font-display text-lg font-bold">
-              T
+              B
             </span>
-            <span className="font-display text-xl">Timber<span className="text-gold-gradient">X</span></span>
+            <span className="font-display text-xl">Black Woodpecker Limited</span>
           </div>
           <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-xs">
             Premium timber and charcoal export solutions delivered to global markets with reliability and integrity since 2009.
@@ -22,16 +22,12 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li><Link to="/about" className="hover:text-foreground">About Us</Link></li>
             <li><Link to="/products" className="hover:text-foreground">Product Catalogue</Link></li>
-            <li><Link to="/export-logistics" className="hover:text-foreground">Export & Logistics</Link></li>
-            <li><Link to="/sustainability" className="hover:text-foreground">Sustainability</Link></li>
           </ul>
         </div>
 
         <div>
           <h4 className="text-xs uppercase tracking-[0.25em] text-gold mb-5">Company</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li><Link to="/gallery" className="hover:text-foreground">Gallery</Link></li>
-            <li><Link to="/certifications" className="hover:text-foreground">Certifications</Link></li>
             <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
           </ul>
         </div>
@@ -41,13 +37,13 @@ export function Footer() {
           <ul className="space-y-3 text-sm text-muted-foreground">
             <li className="flex items-start gap-3"><MapPin size={16} className="mt-0.5 text-gold" /> Mombasa Industrial Park, Kenya</li>
             <li className="flex items-start gap-3"><Phone size={16} className="mt-0.5 text-gold" /> +254 700 000 000</li>
-            <li className="flex items-start gap-3"><Mail size={16} className="mt-0.5 text-gold" /> exports@timberx.co</li>
+            <li className="flex items-start gap-3"><Mail size={16} className="mt-0.5 text-gold" /> info@blackwoodpeckerlimited.com</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} TimberX Exports. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Black Woodpecker Limited. All rights reserved.</p>
           <p className="uppercase tracking-[0.2em]">Sustainably sourced · Globally trusted</p>
         </div>
       </div>

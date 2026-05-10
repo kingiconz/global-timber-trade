@@ -9,9 +9,9 @@ import heroImg from "@/assets/hero-timber.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — TimberX Exports" },
+      { title: "About — Black Woodpecker Limited" },
       { name: "description", content: "Our story, mission and global export capabilities." },
-      { property: "og:title", content: "About TimberX" },
+      { property: "og:title", content: "About Black Woodpecker Limited" },
       { property: "og:description", content: "A premium timber and charcoal exporter with 15+ years of global trade experience." },
     ],
   }),
@@ -32,7 +32,7 @@ function AboutPage() {
       <PageHero
         eyebrow="Our Story"
         title={<>Fifteen years of <span className="text-gold-gradient italic">global trade</span> excellence</>}
-        description="From a single warehouse on the Kenyan coast to a trusted export partner across four continents — TimberX was built on craft, integrity and consistency."
+        description="From a single warehouse on the Kenyan coast to a trusted export partner across four continents — Black Woodpecker Limited was built on craft, integrity and consistency."
         image={heroImg}
       />
 

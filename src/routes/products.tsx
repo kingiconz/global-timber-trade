@@ -11,9 +11,9 @@ import heroImg from "@/assets/hero-timber.jpg";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — TimberX Catalogue" },
+      { title: "Products — Black Woodpecker Limited Catalogue" },
       { name: "description", content: "Browse export-grade timber and charcoal products with detailed specifications." },
-      { property: "og:title", content: "TimberX Product Catalogue" },
+      { property: "og:title", content: "Black Woodpecker Limited Product Catalogue" },
       { property: "og:description", content: "Hardwood timber, lumber, lump charcoal and coconut briquettes." },
     ],
   }),

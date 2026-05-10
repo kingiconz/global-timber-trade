@@ -101,7 +101,7 @@ export function ProductModal({ product, onClose }: { product: Product | null; on
                     <FileText size={14} /> Request Quote
                   </Link>
                   <a
-                    href={`https://wa.me/254700000000?text=Hello%20TimberX%2C%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}.`}
+                    href={`https://wa.me/254700000000?text=Hello%20Black%20Woodpecker%20Limited%2C%20I%27m%20interested%20in%20${encodeURIComponent(product.name)}.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-3 text-xs uppercase tracking-[0.2em] glass border border-border rounded-sm hover:border-gold transition-colors"

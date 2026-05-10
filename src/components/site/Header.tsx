@@ -7,10 +7,6 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/products", label: "Products" },
-  { to: "/export-logistics", label: "Export & Logistics" },
-  { to: "/sustainability", label: "Sustainability" },
-  { to: "/gallery", label: "Gallery" },
-  { to: "/certifications", label: "Certifications" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -34,10 +30,10 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
         <Link to="/" className="flex items-center gap-3 group">
           <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-gold text-primary-foreground font-display text-lg font-bold shadow-glow">
-            T
+            B
           </span>
           <span className="font-display text-xl tracking-wide">
-            Timber<span className="text-gold-gradient">X</span>
+            Black Woodpecker Limited
           </span>
         </Link>
 

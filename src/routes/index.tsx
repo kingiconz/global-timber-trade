@@ -3,8 +3,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowRight, ChevronDown, ShieldCheck, Globe2, Leaf, Truck } from "lucide-react";
 import heroImg from "@/assets/hero-timber.jpg";
-import logisticsImg from "@/assets/logistics.jpg";
-import sustainImg from "@/assets/sustainability.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 import { ProductModal } from "@/components/site/ProductModal";
@@ -16,9 +14,9 @@ import type { Product } from "@/data/products";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "TimberX — Premium Timber & Charcoal Export Solutions" },
+      { title: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
       { name: "description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets." },
-      { property: "og:title", content: "TimberX — Premium Timber & Charcoal Exports" },
+      { property: "og:title", content: "Black Woodpecker Limited — Premium Timber & Charcoal Exports" },
       { property: "og:description", content: "Global exporter of premium hardwood timber and charcoal." },
     ],
   }),
@@ -132,7 +130,7 @@ function HomePage() {
       <section className="py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <SectionHeading
-            eyebrow="Why TimberX"
+            eyebrow="Why Black Woodpecker Limited"
             title={<>Built on integrity, <span className="text-gold-gradient italic">delivered with precision</span></>}
             description="Four pillars define every container we ship — from the forest floor to your warehouse door."
           />
@@ -176,68 +174,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* LOGISTICS BANNER */}
-      <section className="relative py-32 overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={logisticsImg} alt="" loading="lazy" className="h-full w-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/80 to-ink/40" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <SectionHeading
-              eyebrow="Export & Logistics"
-              title={<>From the yard to <span className="text-gold-gradient italic">your port</span></>}
-              description="A dedicated logistics desk manages every container — bookings, fumigation, ISPM-15, customs and CIF documentation across 42 countries."
-            />
-            <Reveal delay={0.2}>
-              <Link
-                to="/export-logistics"
-                className="mt-10 inline-flex items-center gap-3 px-7 py-4 text-xs uppercase tracking-[0.25em] bg-gradient-gold text-primary-foreground rounded-sm hover:shadow-glow transition-shadow"
-              >
-                Explore Logistics <ArrowRight size={14} />
-              </Link>
-            </Reveal>
-          </div>
-          <StaggerGroup className="grid grid-cols-2 gap-4">
-            {["FOB", "CIF", "CFR", "EXW"].map((t) => (
-              <StaggerItem key={t}>
-                <div className="glass rounded-md p-8 text-center">
-                  <div className="font-display text-3xl text-gold-gradient">{t}</div>
-                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">Terms Available</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
-        </div>
-      </section>
-
-      {/* SUSTAINABILITY */}
-      <section className="py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
-          <Reveal>
-            <div className="relative aspect-[4/5] rounded-md overflow-hidden shadow-elevated">
-              <img src={sustainImg} alt="Sustainable forestry" loading="lazy" className="h-full w-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
-            </div>
-          </Reveal>
-          <div>
-            <SectionHeading
-              eyebrow="Sustainability"
-              title={<>Forests preserved, <span className="text-gold-gradient italic">communities thriving</span></>}
-              description="For every hectare we harvest, we plant 1.5. Our chain-of-custody documentation, reforestation partnerships and carbon-offset programs keep our operations transparent and accountable."
-            />
-            <Reveal delay={0.2}>
-              <Link
-                to="/sustainability"
-                className="mt-10 inline-flex items-center gap-3 px-7 py-4 text-xs uppercase tracking-[0.25em] glass border border-border rounded-sm hover:border-gold transition-colors"
-              >
-                Our Commitment <ArrowRight size={14} />
-              </Link>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
@@ -246,7 +182,7 @@ function HomePage() {
               <div className="absolute inset-0 bg-gradient-gold opacity-[0.06]" />
               <p className="relative text-[11px] uppercase tracking-[0.35em] text-gold">Start Your Order</p>
               <h2 className="relative font-display text-4xl md:text-5xl lg:text-6xl mt-5">
-                Ready to ship with <span className="text-gold-gradient italic">TimberX?</span>
+                Ready to ship with <span className="text-gold-gradient italic">Black Woodpecker Limited?</span>
               </h2>
               <p className="relative mt-6 max-w-xl mx-auto text-muted-foreground">
                 Speak with our export desk for catalogue, pricing and delivery options to your port.

@@ -62,9 +62,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "TimberX — Premium Timber & Charcoal Export Solutions" },
+      { title: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
       { name: "description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets with reliability and excellence." },
-      { property: "og:title", content: "TimberX — Premium Timber & Charcoal Exports" },
+      { property: "og:title", content: "Black Woodpecker Limited — Premium Timber & Charcoal Exports" },
       { property: "og:description", content: "Global exporter of premium hardwood timber and charcoal." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

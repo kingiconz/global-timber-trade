@@ -8,9 +8,9 @@ import logisticsImg from "@/assets/logistics.jpg";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — TimberX Exports" },
+      { title: "Contact — Black Woodpecker Limited" },
       { name: "description", content: "Get in touch with our export desk for quotes, catalogue and logistics." },
-      { property: "og:title", content: "Contact TimberX" },
+      { property: "og:title", content: "Contact Black Woodpecker Limited" },
       { property: "og:description", content: "Speak with our global export team." },
     ],
   }),
@@ -73,7 +73,7 @@ function ContactPage() {
                 <p className="mt-3 font-display text-xl leading-snug">Mombasa Industrial Park, Kenya</p>
               </div>
               <Info icon={Phone} label="Phone" value="+254 700 000 000" href="tel:+254700000000" />
-              <Info icon={Mail} label="Email" value="exports@timberx.co" href="mailto:exports@timberx.co" />
+              <Info icon={Mail} label="Email" value="info@blackwoodpeckerlimited.com" href="mailto:info@blackwoodpeckerlimited.com" />
               <Info icon={MessageCircle} label="WhatsApp" value="Chat with our desk" href="https://wa.me/254700000000" />
               <Info icon={MapPin} label="Hours" value="Mon–Sat · 08:00 – 18:00 EAT" />
 
