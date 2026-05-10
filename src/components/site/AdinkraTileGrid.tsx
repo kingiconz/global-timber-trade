@@ -1,34 +1,34 @@
 /**
- * Decorative motif backdrop using the PNG images in a 5x2 grid.
- * Each motif appears once, arranged evenly across the page backdrop.
+ * Render a 2x5 grid of motif images using the numbered public PNGs.
+ * Each motif appears once in a centered cell for a clean, non-repeating backdrop.
  */
-const motifTiles = [
-  "/1.png",
-  "/2.png",
-  "/3.png",
-  "/4.png",
-  "/5.png",
-  "/6.png",
-  "/7.png",
-  "/8.png",
-  "/9.png",
-  "/10.png",
-];
+export function AdinkraTileGrid() {
+  const motifFiles = [
+    "/1.png",
+    "/2.png",
+    "/3.png",
+    "/4.png",
+    "/5.png",
+    "/6.png",
+    "/7.png",
+    "/8.png",
+    "/9.png",
+    "/10.png",
+  ];
 
-export function AdinkraBackdrop() {
   return (
-    <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+    <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
       <div
         className="absolute inset-0"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(5, minmax(0, 1fr))",
           gridTemplateRows: "repeat(2, minmax(0, 1fr))",
-          gap: "4rem",
-          padding: "4% 5%",
+          gap: "1.5rem",
+          padding: "4% 6%",
         }}
       >
-        {motifTiles.map((src) => (
+        {motifFiles.map((src) => (
           <div
             key={src}
             className="relative motif-white"
@@ -40,12 +40,11 @@ export function AdinkraBackdrop() {
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               mixBlendMode: "screen",
-              opacity: 0.12,
+              opacity: 0.1,
             }}
           />
         ))}
       </div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-background/85 via-background/65 to-transparent" />
     </div>
   );
 }

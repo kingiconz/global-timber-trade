@@ -4,7 +4,6 @@ import { Mail, Phone, MapPin } from "lucide-react";
 export function Footer() {
   return (
     <footer className="relative mt-32 border-t border-border bg-gradient-forest overflow-hidden">
-      <div aria-hidden className="absolute inset-0 adinkra-tile-strong pointer-events-none" />
       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent pointer-events-none" />
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 py-20 grid gap-12 lg:grid-cols-4">
         <div>

@@ -112,7 +112,6 @@ function HomePage() {
 
       {/* STATS */}
       <section className="relative py-24 border-y border-border bg-gradient-forest overflow-hidden">
-        <div aria-hidden className="absolute inset-0 adinkra-tile adinkra-fade-mask" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <StaggerGroup className="grid grid-cols-2 lg:grid-cols-4 gap-10">
             {stats.map((s) => (
@@ -180,7 +179,6 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal>
             <div className="relative glass-strong rounded-md p-12 lg:p-20 text-center overflow-hidden border border-border">
-              <div aria-hidden className="absolute inset-0 adinkra-tile adinkra-fade-mask" />
               <div className="absolute inset-0 bg-gradient-gold opacity-[0.06]" />
               <p className="relative text-[11px] uppercase tracking-[0.35em] text-gold">Start Your Order</p>
               <h2 className="relative font-display text-4xl md:text-5xl lg:text-6xl mt-5">

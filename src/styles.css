@@ -156,27 +156,33 @@
     border-radius: 2px;
   }
 
-  /* Authentic Adinkra motif tile (image-based) used as a section accent */
+  /* Decorative motif tiles sourced from the numbered public images */
   .adinkra-tile {
-    background-image: url("/adinkra-motifs.png");
-    background-size: 280px 280px;
-    background-repeat: repeat;
-    filter: invert(1) sepia(1) saturate(5) hue-rotate(5deg) brightness(0.9);
+    background-image: url("/1.jpg"), url("/2.jpg"), url("/3.jpg"), url("/4.jpg"), url("/5.jpg"), url("/6.jpg"), url("/7.jpg"), url("/8.jpg"), url("/9.jpg"), url("/10.jpg");
+    background-size: 72px 72px, 72px 72px, 72px 72px, 72px 72px, 72px 72px, 72px 72px, 72px 72px, 72px 72px, 72px 72px, 72px 72px;
+    background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat;
+    background-position: 0 0, 72px 0, 144px 0, 0 72px, 72px 72px, 144px 72px, 0 144px, 72px 144px, 144px 144px, 216px 144px;
+    filter: grayscale(1) contrast(1.1) sepia(0.9) saturate(1.8) hue-rotate(5deg) brightness(0.92);
     mix-blend-mode: screen;
     opacity: 0.08;
   }
   .adinkra-tile-strong {
-    background-image: url("/adinkra-motifs.png");
-    background-size: 240px 240px;
-    background-repeat: repeat;
-    filter: invert(1) sepia(1) saturate(6) hue-rotate(5deg) brightness(0.95);
+    background-image: url("/1.jpg"), url("/2.jpg"), url("/3.jpg"), url("/4.jpg"), url("/5.jpg"), url("/6.jpg"), url("/7.jpg"), url("/8.jpg"), url("/9.jpg"), url("/10.jpg");
+    background-size: 64px 64px, 64px 64px, 64px 64px, 64px 64px, 64px 64px, 64px 64px, 64px 64px, 64px 64px, 64px 64px, 64px 64px;
+    background-repeat: repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat, repeat;
+    background-position: 0 0, 64px 0, 128px 0, 0 64px, 64px 64px, 128px 64px, 0 128px, 64px 128px, 128px 128px, 192px 128px;
+    filter: grayscale(1) contrast(1.15) sepia(0.95) saturate(2.2) hue-rotate(5deg) brightness(0.96);
     mix-blend-mode: screen;
-    opacity: 0.18;
+    opacity: 0.14;
   }
 
   .adinkra-fade-mask {
     -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  }
+
+  .motif-white {
+    filter: invert(1) brightness(1.4) contrast(1.1);
   }
 
   .cursor-none-all,
