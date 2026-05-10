@@ -101,13 +101,17 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <Outlet />
-        </main>
-        <Footer />
+      <div className="relative min-h-screen flex flex-col">
+        <AdinkraBackdrop />
+        <div className="relative z-10 flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-1">
+            <Outlet />
+          </main>
+          <Footer />
+        </div>
         <FloatingActions />
+        <Cursor />
       </div>
     </QueryClientProvider>
   );
