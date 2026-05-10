@@ -43,7 +43,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border">
+      <div className="relative border-t border-border">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Black Woodpecker Limited. All rights reserved.</p>
           <p className="uppercase tracking-[0.2em]">Sustainably sourced · Globally trusted</p>
