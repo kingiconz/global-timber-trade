@@ -180,6 +180,7 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <Reveal>
             <div className="relative glass-strong rounded-md p-12 lg:p-20 text-center overflow-hidden border border-border">
+              <div aria-hidden className="absolute inset-0 adinkra-tile adinkra-fade-mask" />
               <div className="absolute inset-0 bg-gradient-gold opacity-[0.06]" />
               <p className="relative text-[11px] uppercase tracking-[0.35em] text-gold">Start Your Order</p>
               <h2 className="relative font-display text-4xl md:text-5xl lg:text-6xl mt-5">
