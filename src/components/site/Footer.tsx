@@ -35,9 +35,9 @@ export function Footer() {
         <div>
           <h4 className="text-xs uppercase tracking-[0.25em] text-gold mb-5">Contact</h4>
           <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-start gap-3"><MapPin size={16} className="mt-0.5 text-gold" /> Mombasa Industrial Park, Kenya</li>
-            <li className="flex items-start gap-3"><Phone size={16} className="mt-0.5 text-gold" /> +254 700 000 000</li>
-            <li className="flex items-start gap-3"><Mail size={16} className="mt-0.5 text-gold" /> info@blackwoodpeckerlimited.com</li>
+            <li className="flex items-start gap-3"><MapPin size={16} className="mt-0.5 text-gold shrink-0" /><span>Tema Industrial Area, Accra, Ghana</span></li>
+            <li className="flex items-start gap-3"><Phone size={16} className="mt-0.5 text-gold shrink-0" /><span>+233 30 000 0000</span></li>
+            <li className="flex items-start gap-3"><Mail size={16} className="mt-0.5 text-gold shrink-0" /><span>exports@blackwoodpeckerlimited.com</span></li>
           </ul>
         </div>
       </div>

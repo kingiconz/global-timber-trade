@@ -12,6 +12,7 @@ import appCss from "../styles.css?url";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
+import { Cursor } from "@/components/site/Cursor";
 
 function NotFoundComponent() {
   return (
@@ -102,6 +103,7 @@ function RootComponent() {
         </main>
         <Footer />
         <FloatingActions />
+        <Cursor />
       </div>
     </QueryClientProvider>
   );
