@@ -111,8 +111,9 @@ function HomePage() {
       </section>
 
       {/* STATS */}
-      <section className="relative py-24 border-y border-border bg-gradient-forest">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <section className="relative py-24 border-y border-border bg-gradient-forest overflow-hidden">
+        <div aria-hidden className="absolute inset-0 adinkra-tile adinkra-fade-mask" />
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
           <StaggerGroup className="grid grid-cols-2 lg:grid-cols-4 gap-10">
             {stats.map((s) => (
               <StaggerItem key={s.label} className="text-center lg:text-left">
