@@ -17,6 +17,7 @@ export function PageHero({
       <div className="absolute inset-0">
         <img src={image} alt="" className="h-full w-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-hero" />
+        <div aria-hidden className="absolute inset-0 adinkra-tile adinkra-fade-mask" />
       </div>
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal>
