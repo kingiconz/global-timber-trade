@@ -165,7 +165,7 @@ function HomePage() {
             </Reveal>
           </div>
           <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((p) => (
+            {products.slice(0, 8).map((p) => (
               <StaggerItem key={p.slug}>
                 <ProductCard product={p} onOpen={setActive} />
               </StaggerItem>
