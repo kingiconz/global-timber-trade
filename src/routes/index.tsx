@@ -14,10 +14,10 @@ import type { Product } from "@/data/products";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
-      { name: "description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets." },
-      { property: "og:title", content: "Black Woodpecker Limited — Premium Timber & Charcoal Exports" },
-      { property: "og:description", content: "Global exporter of premium hardwood timber and charcoal." },
+      { title: "Black Woodpecker Limited — Premium African Timber Exports" },
+      { name: "description", content: "Sustainably sourced export-grade African hardwood timber delivered to global markets." },
+      { property: "og:title", content: "Black Woodpecker Limited — Premium Timber Exports" },
+      { property: "og:description", content: "Global exporter of premium African hardwood timber." },
     ],
   }),
   component: HomePage,
@@ -69,8 +69,8 @@ function HomePage() {
             transition={{ duration: 1, delay: 0.15 }}
             className="font-display text-4xl sm:text-5xl lg:text-6xl mt-6 max-w-4xl leading-[1.05]"
           >
-            Premium Timber & <br />
-            <span className="text-gold-gradient italic">Charcoal Exports</span> for Global Markets
+            Premium African <br />
+            <span className="text-gold-gradient italic">Hardwood Timber</span> for Global Markets
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -78,7 +78,7 @@ function HomePage() {
             transition={{ duration: 1, delay: 0.3 }}
             className="mt-8 max-w-xl text-lg text-muted-foreground leading-relaxed"
           >
-            Sustainably sourced export-grade timber and charcoal delivered worldwide with reliability, transparency and uncompromising excellence.
+            Sustainably sourced, export-grade African hardwood timber delivered worldwide with reliability, transparency and uncompromising excellence.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -155,8 +155,8 @@ function HomePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-14">
             <SectionHeading
-              eyebrow="Featured Products"
-              title={<>Export-grade <span className="text-gold-gradient italic">timber & charcoal</span></>}
+              eyebrow="Featured Timber"
+              title={<>Export-grade <span className="text-gold-gradient italic">African hardwood</span></>}
             />
             <Reveal>
               <Link to="/products" className="nav-link text-xs uppercase tracking-[0.25em] text-gold inline-flex items-center gap-2">
