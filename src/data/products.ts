@@ -29,7 +29,7 @@ export type Product = {
   shipping: string;
 };
 
-export const products: Product[] = [
+export const timberProducts: Product[] = [
   {
     slug: "african-teak",
     name: "African Teak",
@@ -135,6 +135,9 @@ export const products: Product[] = [
     moq: "15 m³",
     shipping: "FOB / CIF",
   },
+];
+
+export const charcoalProducts: Product[] = [
   {
     slug: "hardwood-charcoal",
     name: "Hardwood Lump Charcoal",
@@ -221,5 +224,8 @@ export const products: Product[] = [
   },
 ];
 
-export const categories = ["All", "Timber", "Charcoal"] as const;
+// Backwards compatibility (timber-only on the main marketing site)
+export const products: Product[] = timberProducts;
+
 export const grades = ["All", "Grade A", "Premium", "Export Select"] as const;
+export const timberTypes = ["All", "Teak", "Mahogany", "Iroko", "Sapele", "Rosewood"] as const;
