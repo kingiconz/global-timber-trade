@@ -3,6 +3,7 @@ import {
   Outlet,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   Link,
@@ -99,18 +100,20 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isCharcoal = pathname.startsWith("/charcoal");
   return (
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen flex flex-col">
         <AdinkraBackdrop />
         <div className="relative z-10 flex flex-col min-h-screen">
-          <Header />
+          {!isCharcoal && <Header />}
           <main className="flex-1">
             <Outlet />
           </main>
-          <Footer />
+          {!isCharcoal && <Footer />}
         </div>
-        <FloatingActions />
+        {!isCharcoal && <FloatingActions />}
         <Cursor />
       </div>
     </QueryClientProvider>
