@@ -70,7 +70,7 @@ function ContactPage() {
             <div className="glass rounded-md p-8 lg:p-10 h-full space-y-8">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.3em] text-gold">Head Office</p>
-                <p className="mt-3 font-display text-xl leading-snug">Mombasa Industrial Park, Kenya</p>
+                <p className="mt-3 font-display text-xl leading-snug">Tema Industrial Area, Accra, Ghana</p>
               </div>
               <Info icon={Phone} label="Phone" value="+254 700 000 000" href="tel:+254700000000" />
               <Info icon={Mail} label="Email" value="info@blackwoodpeckerlimited.com" href="mailto:info@blackwoodpeckerlimited.com" />

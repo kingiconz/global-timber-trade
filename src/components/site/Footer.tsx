@@ -14,7 +14,7 @@ export function Footer() {
             <span className="font-display text-xl">Black Woodpecker Limited</span>
           </div>
           <p className="mt-6 text-sm text-muted-foreground leading-relaxed max-w-xs">
-            Premium timber and charcoal export solutions delivered to global markets with reliability and integrity since 2009.
+            Premium African hardwood timber export solutions delivered to global markets with reliability and integrity since 2009.
           </p>
         </div>
 

@@ -10,18 +10,18 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Black Woodpecker Limited" },
-      { name: "description", content: "Our story, mission and global export capabilities." },
+      { name: "description", content: "Our story, mission and global timber export capabilities." },
       { property: "og:title", content: "About Black Woodpecker Limited" },
-      { property: "og:description", content: "A premium timber and charcoal exporter with 15+ years of global trade experience." },
+      { property: "og:description", content: "A premium African hardwood timber exporter with 15+ years of global trade experience." },
     ],
   }),
   component: AboutPage,
 });
 
 const milestones = [
-  { year: "2009", title: "Founded in Mombasa", text: "Started as a regional hardwood supplier serving East African markets." },
+  { year: "2009", title: "Founded in Tema", text: "Started as a regional hardwood supplier serving West African markets." },
   { year: "2013", title: "First international container", text: "Shipped our first 40ft container of African Teak to Rotterdam." },
-  { year: "2017", title: "Charcoal division launched", text: "Added export-grade hardwood and coconut charcoal to our portfolio." },
+  { year: "2017", title: "Premium hardwood expansion", text: "Expanded our portfolio with Mahogany, Iroko, Sapele and Rosewood." },
   { year: "2021", title: "FSC-aligned chain-of-custody", text: "Implemented full traceability from forest stand to customer port." },
   { year: "2024", title: "1,800+ containers shipped", text: "Active corridors across 42 countries with a dedicated logistics desk." },
 ];
@@ -32,7 +32,7 @@ function AboutPage() {
       <PageHero
         eyebrow="Our Story"
         title={<>Fifteen years of <span className="text-gold-gradient italic">global trade</span> excellence</>}
-        description="From a single warehouse on the Kenyan coast to a trusted export partner across four continents — Black Woodpecker Limited was built on craft, integrity and consistency."
+        description="From a single warehouse in Tema to a trusted export partner across four continents — Black Woodpecker Limited was built on craft, integrity and consistency."
         image={heroImg}
       />
 
@@ -42,13 +42,13 @@ function AboutPage() {
           <Reveal>
             <div className="glass rounded-md p-10 h-full">
               <p className="text-[11px] uppercase tracking-[0.3em] text-gold">Mission</p>
-              <h3 className="font-display text-3xl mt-4">Reliable supply of premium hardwood and charcoal — sourced responsibly, delivered consistently.</h3>
+              <h3 className="font-display text-3xl mt-4">Reliable supply of premium African hardwood timber — sourced responsibly, delivered consistently.</h3>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <div className="glass rounded-md p-10 h-full">
               <p className="text-[11px] uppercase tracking-[0.3em] text-gold">Vision</p>
-              <h3 className="font-display text-3xl mt-4">To be Africa's most trusted timber and charcoal export brand by 2030.</h3>
+              <h3 className="font-display text-3xl mt-4">To be Africa's most trusted hardwood timber export brand by 2030.</h3>
             </div>
           </Reveal>
         </div>
@@ -118,7 +118,7 @@ function AboutPage() {
             <SectionHeading
               eyebrow="The Team"
               title={<>A specialist export desk on <span className="text-gold-gradient italic">two continents</span></>}
-              description="Our 60-strong team blends forestry, milling, logistics and trade expertise — coordinated across Mombasa, Dubai and Hamburg to keep your shipments moving."
+              description="Our 60-strong team blends forestry, milling, logistics and trade expertise — coordinated across Tema, Dubai and Hamburg to keep your shipments moving."
             />
           </div>
         </div>
