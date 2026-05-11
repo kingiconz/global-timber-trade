@@ -3,6 +3,7 @@ import {
   Outlet,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   Link,
@@ -64,14 +65,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
-      { name: "description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets with reliability and excellence." },
-      { property: "og:title", content: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
-      { property: "og:description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets with reliability and excellence." },
+      { title: "Black Woodpecker Limited — Premium African Timber Exports" },
+      { name: "description", content: "Sustainably sourced export-grade African hardwood timber delivered to global markets with reliability and excellence." },
+      { property: "og:title", content: "Black Woodpecker Limited — Premium African Timber Exports" },
+      { property: "og:description", content: "Sustainably sourced export-grade African hardwood timber delivered to global markets with reliability and excellence." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Black Woodpecker Limited — Premium Timber & Charcoal Export Solutions" },
-      { name: "twitter:description", content: "Sustainably sourced export-grade timber and charcoal delivered to global markets with reliability and excellence." },
+      { name: "twitter:title", content: "Black Woodpecker Limited — Premium African Timber Exports" },
+      { name: "twitter:description", content: "Sustainably sourced export-grade African hardwood timber delivered to global markets with reliability and excellence." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/46a11c9c-2cdb-4cfe-8c06-85e6d065c3a3/id-preview-dedda954--a4e77bd6-2fa4-47ff-bec3-cc36b0687391.lovable.app-1778383444003.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/46a11c9c-2cdb-4cfe-8c06-85e6d065c3a3/id-preview-dedda954--a4e77bd6-2fa4-47ff-bec3-cc36b0687391.lovable.app-1778383444003.png" },
     ],
@@ -99,18 +100,20 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const isCharcoal = pathname.startsWith("/charcoal");
   return (
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen flex flex-col">
         <AdinkraBackdrop />
         <div className="relative z-10 flex flex-col min-h-screen">
-          <Header />
+          {!isCharcoal && <Header />}
           <main className="flex-1">
             <Outlet />
           </main>
-          <Footer />
+          {!isCharcoal && <Footer />}
         </div>
-        <FloatingActions />
+        {!isCharcoal && <FloatingActions />}
         <Cursor />
       </div>
     </QueryClientProvider>

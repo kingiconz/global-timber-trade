@@ -5,23 +5,23 @@ import { Search, LayoutGrid, List as ListIcon } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { ProductCard } from "@/components/site/ProductCard";
 import { ProductModal } from "@/components/site/ProductModal";
-import { products, categories, grades, type Product } from "@/data/products";
+import { products, timberTypes, grades, type Product } from "@/data/products";
 import heroImg from "@/assets/hero-timber.jpg";
 
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — Black Woodpecker Limited Catalogue" },
-      { name: "description", content: "Browse export-grade timber and charcoal products with detailed specifications." },
-      { property: "og:title", content: "Black Woodpecker Limited Product Catalogue" },
-      { property: "og:description", content: "Hardwood timber, lumber, lump charcoal and coconut briquettes." },
+      { title: "Timber Catalogue — Black Woodpecker Limited" },
+      { name: "description", content: "Browse export-grade African hardwood timber with detailed specifications." },
+      { property: "og:title", content: "Black Woodpecker Limited Timber Catalogue" },
+      { property: "og:description", content: "Premium African hardwood — Teak, Mahogany, Iroko, Sapele, Rosewood." },
     ],
   }),
   component: ProductsPage,
 });
 
 function ProductsPage() {
-  const [cat, setCat] = useState<(typeof categories)[number]>("All");
+  const [woodType, setWoodType] = useState<(typeof timberTypes)[number]>("All");
   const [grade, setGrade] = useState<(typeof grades)[number]>("All");
   const [q, setQ] = useState("");
   const [view, setView] = useState<"grid" | "list">("grid");
@@ -29,19 +29,19 @@ function ProductsPage() {
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
-      if (cat !== "All" && p.category !== cat) return false;
+      if (woodType !== "All" && p.type !== woodType) return false;
       if (grade !== "All" && p.grade !== grade) return false;
       if (q && !`${p.name} ${p.scientificName ?? ""} ${p.type}`.toLowerCase().includes(q.toLowerCase())) return false;
       return true;
     });
-  }, [cat, grade, q]);
+  }, [woodType, grade, q]);
 
   return (
     <>
       <PageHero
         eyebrow="Catalogue"
-        title={<>Export-grade <span className="text-gold-gradient italic">products</span></>}
-        description="Filter, search and explore our timber and charcoal range — every entry comes with full export specifications."
+        title={<>Export-grade <span className="text-gold-gradient italic">African timber</span></>}
+        description="Filter, search and explore our premium hardwood timber range — every entry comes with full export specifications."
         image={heroImg}
       />
 
@@ -50,12 +50,12 @@ function ProductsPage() {
           {/* Toolbar */}
           <div className="glass rounded-md p-5 lg:p-6 flex flex-col lg:flex-row gap-5 lg:items-center lg:justify-between">
             <div className="flex flex-wrap gap-2">
-              {categories.map((c) => (
+              {timberTypes.map((c) => (
                 <button
                   key={c}
-                  onClick={() => setCat(c)}
+                  onClick={() => setWoodType(c)}
                   className={`px-4 py-2 text-[11px] uppercase tracking-[0.2em] rounded-sm transition-all ${
-                    cat === c ? "bg-gradient-gold text-primary-foreground" : "border border-border text-muted-foreground hover:text-foreground"
+                    woodType === c ? "bg-gradient-gold text-primary-foreground" : "border border-border text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {c}
@@ -128,7 +128,7 @@ function ProductsPage() {
                         <img src={p.image} alt={p.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                       </div>
                       <div className="flex-1 p-6 lg:p-8 flex flex-col">
-                        <span className="text-[10px] uppercase tracking-[0.3em] text-gold">{p.category} · {p.grade}</span>
+                        <span className="text-[10px] uppercase tracking-[0.3em] text-gold">{p.type} · {p.grade}</span>
                         <h3 className="font-display text-2xl mt-2">{p.name}</h3>
                         {p.scientificName && <p className="text-xs italic text-muted-foreground mt-1">{p.scientificName}</p>}
                         <p className="mt-3 text-sm text-muted-foreground">{p.short}</p>
