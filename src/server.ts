@@ -1,5 +1,6 @@
 import "./lib/error-capture";
 
+import http from "http";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
@@ -78,3 +79,36 @@ export default {
     }
   },
 };
+
+// Start HTTP server for Koyeb
+const port = process.env.PORT || 3000;
+const server = http.createServer(async (req, res) => {
+  try {
+    const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
+    const request = new Request(url, {
+      method: req.method,
+      headers: req.headers as HeadersInit,
+      body: req.method !== "GET" && req.method !== "HEAD" ? req : undefined,
+    });
+
+    const handler = await getServerEntry();
+    const response = await handler.fetch(request, process.env, {});
+    const normalizedResponse = await normalizeCatastrophicSsrResponse(response);
+
+    res.writeHead(normalizedResponse.status, Object.fromEntries(normalizedResponse.headers));
+    if (normalizedResponse.body) {
+      res.end(await normalizedResponse.arrayBuffer());
+    } else {
+      res.end();
+    }
+  } catch (error) {
+    console.error(error);
+    const errorResponse = brandedErrorResponse();
+    res.writeHead(errorResponse.status, Object.fromEntries(errorResponse.headers));
+    res.end(await errorResponse.text());
+  }
+});
+
+server.listen(port, "0.0.0.0", () => {
+  console.log(`Server running on http://0.0.0.0:${port}`);
+});
