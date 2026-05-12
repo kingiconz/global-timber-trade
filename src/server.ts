@@ -1,11 +1,33 @@
 import "./lib/error-capture";
 
+import fs from "fs";
 import http from "http";
+import path from "path";
+import { fileURLToPath } from "url";
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
+};
+
+const serverDir = path.dirname(fileURLToPath(import.meta.url));
+const clientDir = path.resolve(serverDir, "../../client");
+
+const mimeTypes: Record<string, string> = {
+  ".css": "text/css",
+  ".js": "application/javascript",
+  ".json": "application/json",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".svg": "image/svg+xml",
+  ".ico": "image/x-icon",
+  ".webp": "image/webp",
+  ".woff": "font/woff",
+  ".woff2": "font/woff2",
+  ".ttf": "font/ttf",
+  ".html": "text/html; charset=utf-8",
 };
 
 let serverEntryPromise: Promise<ServerEntry> | undefined;
@@ -17,6 +39,36 @@ async function getServerEntry(): Promise<ServerEntry> {
     );
   }
   return serverEntryPromise;
+}
+
+async function tryServeStatic(pathname: string): Promise<Response | null> {
+  const normalizedPath = path.posix.normalize(pathname);
+  const filePath = path.resolve(clientDir, `.${normalizedPath}`);
+  if (!filePath.startsWith(clientDir)) return null;
+
+  try {
+    const stat = await fs.promises.stat(filePath);
+    if (!stat.isFile()) return null;
+  } catch {
+    return null;
+  }
+
+  const ext = path.extname(filePath).toLowerCase();
+  const contentType = mimeTypes[ext] ?? "application/octet-stream";
+  const body = await fs.promises.readFile(filePath);
+  const headers = new Headers({
+    "content-type": contentType,
+  });
+  if (pathname.startsWith("/assets/")) {
+    headers.set("cache-control", "public, max-age=31536000, immutable");
+  } else {
+    headers.set("cache-control", "public, max-age=3600");
+  }
+
+  return new Response(body, {
+    status: 200,
+    headers,
+  });
 }
 
 function brandedErrorResponse(): Response {
@@ -86,6 +138,13 @@ if (!process.env.VITE_DEV) {
   const server = http.createServer(async (req, res) => {
     try {
       const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
+      const staticResponse = await tryServeStatic(url.pathname);
+      if (staticResponse) {
+        res.writeHead(staticResponse.status, Object.fromEntries(staticResponse.headers));
+        const buffer = await staticResponse.arrayBuffer();
+        res.end(Buffer.from(buffer));
+        return;
+      }
       
       const request = new Request(url, {
         method: req.method,
