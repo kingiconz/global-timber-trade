@@ -22,11 +22,10 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const stats = [
-  { value: 15, suffix: "+", label: "Years of Export Excellence" },
-  { value: 42, suffix: "", label: "Countries Served" },
-  { value: 1800, suffix: "+", label: "Containers Shipped" },
-  { value: 98, suffix: "%", label: "On-Time Delivery" },
+const sustainPoints = [
+  { icon: TreePine, title: "5 Trees Planted Per Cut", text: "For every hardwood tree we harvest, we plant five new seedlings — restoring the canopy faster than we touch it." },
+  { icon: Sprout, title: "Managed Concessions", text: "We source only from licensed, rotation-managed forest blocks with strict diameter and species limits." },
+  { icon: Leaf, title: "Zero Clear-Cutting", text: "Selective, single-tree felling protects the surrounding forest, soil and wildlife corridors." },
 ];
 
 const pillars = [
