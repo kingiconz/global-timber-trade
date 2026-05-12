@@ -39,7 +39,7 @@ export const timberProducts: Product[] = [
   {
     slug: "african-teak",
     name: "African Teak",
-    scientificName: "Milicia excelsa",
+    scientificName: "Tectona grandis",
     category: "Timber",
     type: "Teak",
     grade: "Grade A",
@@ -59,8 +59,8 @@ export const timberProducts: Product[] = [
   },
   {
     slug: "rosewood-lumber",
-    name: "Rosewood Lumber",
-    scientificName: "Dalbergia melanoxylon",
+    name: "Rosewood (Kpatro)",
+    scientificName: "Pterocarpus erinaceus",
     category: "Timber",
     type: "Rosewood",
     grade: "Premium",
