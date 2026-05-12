@@ -185,12 +185,20 @@ function HomePage() {
             </Reveal>
           </div>
           <StaggerGroup className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.slice(0, 8).map((p) => (
+            {products.slice(0, 4).map((p) => (
               <StaggerItem key={p.slug}>
                 <ProductCard product={p} onOpen={setActive} />
               </StaggerItem>
             ))}
           </StaggerGroup>
+          <div className="mt-12 flex justify-center">
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-sm bg-gradient-gold text-primary-foreground text-xs uppercase tracking-[0.3em] hover:shadow-glow transition-shadow"
+            >
+              See More Products <ArrowRight size={14} />
+            </Link>
+          </div>
         </div>
       </section>
 
