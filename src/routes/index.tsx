@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowRight, ChevronDown, ShieldCheck, Globe2, Leaf, Truck } from "lucide-react";
+import { ArrowRight, ChevronDown, ShieldCheck, Globe2, Leaf, Truck, Sprout, TreePine } from "lucide-react";
 import heroImg from "@/assets/hero-timber.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
