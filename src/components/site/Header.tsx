@@ -27,12 +27,12 @@ export function Header() {
         scrolled ? "glass-strong border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
-        <Link to="/" className="flex items-center gap-3 group">
-          <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-gold text-primary-foreground font-display text-lg font-bold shadow-glow">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 flex items-center justify-between h-16 sm:h-20 gap-3">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 group min-w-0">
+          <span className="relative inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-sm bg-gradient-gold text-primary-foreground font-display text-base sm:text-lg font-bold shadow-glow flex-shrink-0">
             B
           </span>
-          <span className="font-display text-xl tracking-wide">
+          <span className="font-display text-base sm:text-xl tracking-wide truncate">
             Black Woodpecker Limited
           </span>
         </Link>
