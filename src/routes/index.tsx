@@ -1,13 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowRight, ChevronDown, ShieldCheck, Globe2, Leaf, Truck } from "lucide-react";
+import { ArrowRight, ChevronDown, ShieldCheck, Globe2, Leaf, Truck, Sprout, TreePine } from "lucide-react";
 import heroImg from "@/assets/hero-timber.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 import { ProductModal } from "@/components/site/ProductModal";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/site/Reveal";
-import { Counter } from "@/components/site/Counter";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import type { Product } from "@/data/products";
 
@@ -23,11 +22,10 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const stats = [
-  { value: 15, suffix: "+", label: "Years of Export Excellence" },
-  { value: 42, suffix: "", label: "Countries Served" },
-  { value: 1800, suffix: "+", label: "Containers Shipped" },
-  { value: 98, suffix: "%", label: "On-Time Delivery" },
+const sustainPoints = [
+  { icon: TreePine, title: "5 Trees Planted Per Cut", text: "For every hardwood tree we harvest, we plant five new seedlings — restoring the canopy faster than we touch it." },
+  { icon: Sprout, title: "Managed Concessions", text: "We source only from licensed, rotation-managed forest blocks with strict diameter and species limits." },
+  { icon: Leaf, title: "Zero Clear-Cutting", text: "Selective, single-tree felling protects the surrounding forest, soil and wildlife corridors." },
 ];
 
 const pillars = [
@@ -110,21 +108,43 @@ function HomePage() {
         </motion.div>
       </section>
 
-      {/* STATS */}
-      <section className="relative py-24 border-y border-border bg-gradient-forest overflow-hidden">
+      {/* SUSTAINABILITY */}
+      <section className="relative py-20 sm:py-24 lg:py-28 border-y border-border bg-gradient-forest overflow-hidden">
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-          <StaggerGroup className="grid grid-cols-2 lg:grid-cols-4 gap-10">
-            {stats.map((s) => (
-              <StaggerItem key={s.label} className="text-center lg:text-left">
-                <div className="font-display text-5xl lg:text-6xl text-gold-gradient">
-                  <Counter to={s.value} suffix={s.suffix} />
-                </div>
-                <p className="mt-3 text-xs uppercase tracking-[0.25em] text-muted-foreground">{s.label}</p>
-              </StaggerItem>
-            ))}
-          </StaggerGroup>
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div className="lg:col-span-5">
+              <Reveal>
+                <p className="text-[11px] uppercase tracking-[0.35em] text-gold">Sustainability</p>
+              </Reveal>
+              <Reveal delay={0.05}>
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl mt-4 leading-[1.05]">
+                  We don't destroy the forest — we <span className="text-gold-gradient italic">replant it</span>.
+                </h2>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="mt-6 text-base text-muted-foreground leading-relaxed">
+                  For every single hardwood tree we harvest, our team plants approximately <span className="text-foreground font-medium">five new seedlings</span>. It's a simple promise that keeps Ghana's forests thriving for generations to come.
+                </p>
+              </Reveal>
+            </div>
+
+            <StaggerGroup className="lg:col-span-7 grid sm:grid-cols-3 gap-4 sm:gap-6">
+              {sustainPoints.map((p) => (
+                <StaggerItem key={p.title}>
+                  <div className="glass rounded-md p-6 sm:p-7 h-full hover:shadow-glow hover:-translate-y-1 transition-all duration-500">
+                    <div className="h-11 w-11 rounded-sm bg-gradient-gold inline-flex items-center justify-center text-primary-foreground mb-5">
+                      <p.icon size={18} />
+                    </div>
+                    <h3 className="font-display text-lg">{p.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.text}</p>
+                  </div>
+                </StaggerItem>
+              ))}
+            </StaggerGroup>
+          </div>
         </div>
       </section>
+
 
       {/* PILLARS */}
       <section className="py-32">
