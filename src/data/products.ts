@@ -7,6 +7,12 @@ import irokoImg from "@/assets/product-iroko.jpg";
 import sapeleImg from "@/assets/product-sapele.jpg";
 import hexBriquettesImg from "@/assets/product-hex-briquettes.jpg";
 import restaurantCharcoalImg from "@/assets/product-restaurant-charcoal.jpg";
+import ceibaImg from "@/assets/product-ceiba.jpg";
+import wawaImg from "@/assets/product-wawa.jpg";
+import afzeliaImg from "@/assets/product-afzelia.jpg";
+import gmelinaImg from "@/assets/product-gmelina.jpg";
+import aniegreImg from "@/assets/product-aniegre.jpg";
+import limbaImg from "@/assets/product-limba.jpg";
 
 export type Product = {
   slug: string;
