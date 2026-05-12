@@ -7,7 +7,6 @@ import { products } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
 import { ProductModal } from "@/components/site/ProductModal";
 import { Reveal, StaggerGroup, StaggerItem } from "@/components/site/Reveal";
-import { Counter } from "@/components/site/Counter";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import type { Product } from "@/data/products";
 
