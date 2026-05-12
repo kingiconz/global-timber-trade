@@ -7,6 +7,12 @@ import irokoImg from "@/assets/product-iroko.jpg";
 import sapeleImg from "@/assets/product-sapele.jpg";
 import hexBriquettesImg from "@/assets/product-hex-briquettes.jpg";
 import restaurantCharcoalImg from "@/assets/product-restaurant-charcoal.jpg";
+import ceibaImg from "@/assets/product-ceiba.jpg";
+import wawaImg from "@/assets/product-wawa.jpg";
+import afzeliaImg from "@/assets/product-afzelia.jpg";
+import gmelinaImg from "@/assets/product-gmelina.jpg";
+import aniegreImg from "@/assets/product-aniegre.jpg";
+import limbaImg from "@/assets/product-limba.jpg";
 
 export type Product = {
   slug: string;
@@ -33,7 +39,7 @@ export const timberProducts: Product[] = [
   {
     slug: "african-teak",
     name: "African Teak",
-    scientificName: "Milicia excelsa",
+    scientificName: "Tectona grandis",
     category: "Timber",
     type: "Teak",
     grade: "Grade A",
@@ -53,8 +59,8 @@ export const timberProducts: Product[] = [
   },
   {
     slug: "rosewood-lumber",
-    name: "Rosewood Lumber",
-    scientificName: "Dalbergia melanoxylon",
+    name: "Rosewood (Kpatro)",
+    scientificName: "Pterocarpus erinaceus",
     category: "Timber",
     type: "Rosewood",
     grade: "Premium",
@@ -134,6 +140,153 @@ export const timberProducts: Product[] = [
     availability: "In Stock",
     moq: "15 m³",
     shipping: "FOB / CIF",
+  },
+  {
+    slug: "ceiba-fromager",
+    name: "Ceiba (Fromager)",
+    scientificName: "Ceiba pentandra",
+    category: "Timber",
+    type: "Ceiba",
+    grade: "Grade A",
+    short: "Lightweight pale hardwood, ideal for plywood and joinery.",
+    description:
+      "Fast-growing tropical hardwood with a pale cream colour and uniform texture. Widely used for plywood cores, light construction, packaging, and interior joinery where workability and a clean finish matter.",
+    image: ceibaImg,
+    gallery: [ceibaImg, wawaImg, limbaImg],
+    density: "230–390 kg/m³",
+    moisture: "12–16%",
+    sizes: ["Logs, sawn boards, plywood-core blocks"],
+    packaging: "Banded bundles, fumigated, ISPM-15 compliant",
+    regions: ["Asia", "Europe", "Middle East"],
+    availability: "In Stock",
+    moq: "30 m³",
+    shipping: "FOB Tema / CIF",
+  },
+  {
+    slug: "abachi-wawa",
+    name: "Abachi (Wawa)",
+    scientificName: "Triplochiton scleroxylon",
+    category: "Timber",
+    type: "Wawa",
+    grade: "Grade A",
+    short: "Pale, lightweight hardwood — sauna and joinery favourite.",
+    description:
+      "Also known as Obeche or African Whitewood, Wawa is a stable, easy-to-work timber prized for sauna interiors, mouldings, picture frames, and lightweight furniture. Pale straw colour with a uniform fine grain.",
+    image: wawaImg,
+    gallery: [wawaImg, ceibaImg, limbaImg],
+    density: "320–450 kg/m³",
+    moisture: "10–14%",
+    sizes: ["Sawn boards, square edged lumber, custom sizes"],
+    packaging: "Strapped bundles, kiln-dried option, ISPM-15",
+    regions: ["EU", "Middle East", "Asia", "USA"],
+    availability: "In Stock",
+    moq: "25 m³",
+    shipping: "FOB Tema / CIF",
+  },
+  {
+    slug: "african-mahogany-khaya",
+    name: "African Mahogany (Khaya spp.)",
+    scientificName: "Khaya spp.",
+    category: "Timber",
+    type: "Mahogany",
+    grade: "Premium",
+    short: "Khaya species — multi-source mahogany for export volume.",
+    description:
+      "Sourced across Khaya ivorensis, K. anthotheca and K. grandifoliola, this mahogany category serves bulk export demand for cabinetry, boat building, and decorative joinery with consistent reddish-brown tones.",
+    image: mahoganyImg,
+    gallery: [mahoganyImg, sapeleImg, rosewoodImg],
+    density: "500–650 kg/m³",
+    moisture: "10–12%",
+    sizes: ["Logs, squared timbers, sawn boards"],
+    packaging: "Banded bundles, ISPM-15 compliant fumigation",
+    regions: ["Europe", "USA", "China", "India"],
+    availability: "In Stock",
+    moq: "30 m³",
+    shipping: "FOB Tema / CIF",
+  },
+  {
+    slug: "afzelia-papao-doussie",
+    name: "Afzelia (Papao / Doussie)",
+    scientificName: "Afzelia spp.",
+    category: "Timber",
+    type: "Afzelia",
+    grade: "Premium",
+    short: "Dense reddish-brown hardwood, exceptional durability.",
+    description:
+      "Highly durable West African hardwood with a rich reddish-brown heartwood. Excellent rot and insect resistance makes it the choice for heavy joinery, exterior doors, decking, and structural beams.",
+    image: afzeliaImg,
+    gallery: [afzeliaImg, mahoganyImg, irokoImg],
+    density: "780–880 kg/m³",
+    moisture: "10–12%",
+    sizes: ["Logs, sawn boards, squared beams"],
+    packaging: "Strapped bundles, ISPM-15 compliant",
+    regions: ["EU", "Middle East", "Asia", "USA"],
+    availability: "In Stock",
+    moq: "20 m³",
+    shipping: "FOB Tema / CIF",
+  },
+  {
+    slug: "gmelina",
+    name: "Gmelina",
+    scientificName: "Gmelina arborea",
+    category: "Timber",
+    type: "Gmelina",
+    grade: "Grade A",
+    short: "Plantation-grown hardwood, ideal for joinery and pulp.",
+    description:
+      "Sustainably plantation-grown Gmelina with a pale yellow-grey hue and even grain. Used in light construction, furniture frames, mouldings, and pulp/paper processing — a true volume hardwood.",
+    image: gmelinaImg,
+    gallery: [gmelinaImg, ceibaImg, wawaImg],
+    density: "420–560 kg/m³",
+    moisture: "12–14%",
+    sizes: ["Logs, sawn boards, custom dimensions"],
+    packaging: "Banded bundles, ISPM-15 compliant",
+    regions: ["Asia", "EU", "Middle East"],
+    availability: "In Stock",
+    moq: "30 m³",
+    shipping: "FOB Tema / CIF",
+  },
+  {
+    slug: "aniegre-asanfina",
+    name: "Aniegre (Asanfina)",
+    scientificName: "Aningeria spp.",
+    category: "Timber",
+    type: "Aniegre",
+    grade: "Premium",
+    short: "Honey-toned hardwood with a fine satin grain.",
+    description:
+      "Aniegre offers a warm honey-gold colour and a smooth satin lustre, often quarter-sawn for figured veneer. Favoured for high-end cabinetry, panelling, and decorative interior work.",
+    image: aniegreImg,
+    gallery: [aniegreImg, sapeleImg, mahoganyImg],
+    density: "480–620 kg/m³",
+    moisture: "10–12%",
+    sizes: ["Sawn boards, veneer flitches, custom sizes"],
+    packaging: "Crated, ISPM-15 compliant",
+    regions: ["Europe", "USA", "Asia"],
+    availability: "Limited",
+    moq: "15 m³",
+    shipping: "FOB / CIF",
+  },
+  {
+    slug: "limba-ofram",
+    name: "Limba (Ofram)",
+    scientificName: "Terminalia superba",
+    category: "Timber",
+    type: "Limba",
+    grade: "Grade A",
+    short: "Pale creamy hardwood with subtle dark figured streaks.",
+    description:
+      "Known commercially as Limba or Ofram, this versatile timber pairs a pale yellow body with occasional dark heart streaks ('Black Limba'). Used for furniture, mouldings, plywood faces, and musical instrument bodies.",
+    image: limbaImg,
+    gallery: [limbaImg, ceibaImg, wawaImg],
+    density: "440–600 kg/m³",
+    moisture: "10–14%",
+    sizes: ["Logs, sawn boards, veneer logs"],
+    packaging: "Strapped bundles, ISPM-15 compliant",
+    regions: ["EU", "USA", "Asia"],
+    availability: "In Stock",
+    moq: "25 m³",
+    shipping: "FOB Tema / CIF",
   },
 ];
 
@@ -228,4 +381,4 @@ export const charcoalProducts: Product[] = [
 export const products: Product[] = timberProducts;
 
 export const grades = ["All", "Grade A", "Premium", "Export Select"] as const;
-export const timberTypes = ["All", "Teak", "Mahogany", "Iroko", "Sapele", "Rosewood"] as const;
+export const timberTypes = ["All", "Teak", "Mahogany", "Iroko", "Sapele", "Rosewood", "Ceiba", "Wawa", "Afzelia", "Gmelina", "Aniegre", "Limba"] as const;
