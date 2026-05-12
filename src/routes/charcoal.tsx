@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowRight, ChevronDown, Flame, Globe2, ShieldCheck, Truck, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { ArrowRight, ChevronDown, Flame, Globe2, ShieldCheck, Truck, Mail, Phone, MapPin, MessageCircle, Leaf, Sprout, TreePine } from "lucide-react";
 import charcoalImg from "@/assets/product-charcoal.jpg";
 import { charcoalProducts } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
