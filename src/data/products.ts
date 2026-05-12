@@ -381,4 +381,4 @@ export const charcoalProducts: Product[] = [
 export const products: Product[] = timberProducts;
 
 export const grades = ["All", "Grade A", "Premium", "Export Select"] as const;
-export const timberTypes = ["All", "Teak", "Mahogany", "Iroko", "Sapele", "Rosewood"] as const;
+export const timberTypes = ["All", "Teak", "Mahogany", "Iroko", "Sapele", "Rosewood", "Ceiba", "Wawa", "Afzelia", "Gmelina", "Aniegre", "Limba"] as const;
