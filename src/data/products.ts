@@ -1,18 +1,33 @@
 import teakImg from "@/assets/product-teak.jpg";
-import charcoalImg from "@/assets/product-charcoal.jpg";
 import rosewoodImg from "@/assets/product-rosewood.jpg";
-import briquettesImg from "@/assets/product-briquettes.jpg";
 import mahoganyImg from "@/assets/product-mahogany.jpg";
 import irokoImg from "@/assets/product-iroko.jpg";
 import sapeleImg from "@/assets/product-sapele.jpg";
-import hexBriquettesImg from "@/assets/product-hex-briquettes.jpg";
-import restaurantCharcoalImg from "@/assets/product-restaurant-charcoal.jpg";
 import ceibaImg from "@/assets/product-ceiba.jpg";
 import wawaImg from "@/assets/product-wawa.jpg";
 import afzeliaImg from "@/assets/product-afzelia.jpg";
 import gmelinaImg from "@/assets/product-gmelina.jpg";
 import aniegreImg from "@/assets/product-aniegre.jpg";
 import limbaImg from "@/assets/product-limba.jpg";
+
+// Charcoal product imagery (CDN assets)
+import charcoalBagPremium from "@/assets/charcoal-bag-premium.png.asset.json";
+import charcoalBulkPack from "@/assets/charcoal-bulk-pack.png.asset.json";
+import charcoalBagOpen from "@/assets/charcoal-bag-open.png.asset.json";
+import charcoalHexBriquettes from "@/assets/charcoal-hex-briquettes.jpg.asset.json";
+import charcoalCubeBriquettes from "@/assets/charcoal-cube-briquettes.jpg.asset.json";
+import charcoalHardwoodLump from "@/assets/charcoal-hardwood-lump.jpg.asset.json";
+import charcoalCoconut from "@/assets/charcoal-coconut.jpg.asset.json";
+import charcoalRestaurantGrade from "@/assets/charcoal-restaurant-grade.jpg.asset.json";
+
+const charcoalBagPremiumImg = charcoalBagPremium.url;
+const charcoalBulkPackImg = charcoalBulkPack.url;
+const charcoalBagOpenImg = charcoalBagOpen.url;
+const charcoalHexImg = charcoalHexBriquettes.url;
+const charcoalCubeImg = charcoalCubeBriquettes.url;
+const charcoalLumpImg = charcoalHardwoodLump.url;
+const charcoalCoconutImg = charcoalCoconut.url;
+const charcoalRestaurantImg = charcoalRestaurantGrade.url;
 
 export type Product = {
   slug: string;
