@@ -134,7 +134,7 @@ export default {
 
 // Start HTTP server for Koyeb
 if (!process.env.VITE_DEV) {
-  const port = process.env.PORT || 8000;
+  const port = Number(process.env.PORT) || 8000;
   const server = http.createServer(async (req, res) => {
     try {
       const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
@@ -145,12 +145,14 @@ if (!process.env.VITE_DEV) {
         res.end(Buffer.from(buffer));
         return;
       }
-      
+
+      const hasBody = req.method !== "GET" && req.method !== "HEAD";
       const request = new Request(url, {
         method: req.method,
         headers: req.headers as HeadersInit,
-        body: req.method !== "GET" && req.method !== "HEAD" ? req : undefined,
-      });
+        body: hasBody ? (req as unknown as BodyInit) : undefined,
+        ...(hasBody ? { duplex: "half" } : {}),
+      } as RequestInit);
 
       const handler = await getServerEntry();
       const response = await handler.fetch(request, process.env, {});
