@@ -171,14 +171,24 @@ function CharcoalPage() {
             description="Every product ships with full export documentation, lab certificates and ISPM-15 compliance where required."
           />
           <StaggerGroup className="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {charcoalProducts.map((p) => (
+            {charcoalProducts.slice(0, 4).map((p) => (
               <StaggerItem key={p.slug}>
                 <ProductCard product={p} onOpen={setActive} />
               </StaggerItem>
             ))}
           </StaggerGroup>
+          <div className="mt-14 flex justify-center">
+            <Link
+              to="/charcoal/products"
+              className="group inline-flex items-center gap-3 px-8 py-4 text-xs uppercase tracking-[0.25em] bg-gradient-gold text-primary-foreground rounded-sm hover:shadow-glow transition-shadow"
+            >
+              See More Products
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
         </div>
       </section>
+
 
       {/* CTA / CONTACT */}
       <section id="contact" className="py-24">
