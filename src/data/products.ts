@@ -1,18 +1,33 @@
 import teakImg from "@/assets/product-teak.jpg";
-import charcoalImg from "@/assets/product-charcoal.jpg";
 import rosewoodImg from "@/assets/product-rosewood.jpg";
-import briquettesImg from "@/assets/product-briquettes.jpg";
 import mahoganyImg from "@/assets/product-mahogany.jpg";
 import irokoImg from "@/assets/product-iroko.jpg";
 import sapeleImg from "@/assets/product-sapele.jpg";
-import hexBriquettesImg from "@/assets/product-hex-briquettes.jpg";
-import restaurantCharcoalImg from "@/assets/product-restaurant-charcoal.jpg";
 import ceibaImg from "@/assets/product-ceiba.jpg";
 import wawaImg from "@/assets/product-wawa.jpg";
 import afzeliaImg from "@/assets/product-afzelia.jpg";
 import gmelinaImg from "@/assets/product-gmelina.jpg";
 import aniegreImg from "@/assets/product-aniegre.jpg";
 import limbaImg from "@/assets/product-limba.jpg";
+
+// Charcoal product imagery (CDN assets)
+import charcoalBagPremium from "@/assets/charcoal-bag-premium.png.asset.json";
+import charcoalBulkPack from "@/assets/charcoal-bulk-pack.png.asset.json";
+import charcoalBagOpen from "@/assets/charcoal-bag-open.png.asset.json";
+import charcoalHexBriquettes from "@/assets/charcoal-hex-briquettes.jpg.asset.json";
+import charcoalCubeBriquettes from "@/assets/charcoal-cube-briquettes.jpg.asset.json";
+import charcoalHardwoodLump from "@/assets/charcoal-hardwood-lump.jpg.asset.json";
+import charcoalCoconut from "@/assets/charcoal-coconut.jpg.asset.json";
+import charcoalRestaurantGrade from "@/assets/charcoal-restaurant-grade.jpg.asset.json";
+
+const charcoalBagPremiumImg = charcoalBagPremium.url;
+const charcoalBulkPackImg = charcoalBulkPack.url;
+const charcoalBagOpenImg = charcoalBagOpen.url;
+const charcoalHexImg = charcoalHexBriquettes.url;
+const charcoalCubeImg = charcoalCubeBriquettes.url;
+const charcoalLumpImg = charcoalHardwoodLump.url;
+const charcoalCoconutImg = charcoalCoconut.url;
+const charcoalRestaurantImg = charcoalRestaurantGrade.url;
 
 export type Product = {
   slug: string;
@@ -292,17 +307,59 @@ export const timberProducts: Product[] = [
 
 export const charcoalProducts: Product[] = [
   {
-    slug: "hardwood-charcoal",
+    slug: "premium-bbq-charcoal-bag",
+    name: "Premium BBQ Charcoal — Retail Bag",
+    scientificName: "Mixed indigenous hardwood",
+    category: "Charcoal",
+    type: "Lump",
+    grade: "Premium",
+    short: "Signature 10 lb retail bag, 100% natural and long lasting.",
+    description:
+      "Our flagship retail bag of premium hardwood BBQ charcoal — 100% natural, no chemicals, no binders. Designed for backyard grilling and premium retail shelves worldwide.",
+    image: charcoalBagPremiumImg,
+    gallery: [charcoalBagPremiumImg, charcoalBagOpenImg, charcoalBulkPackImg],
+    density: "Fixed carbon ≥ 78%",
+    moisture: "≤ 6%",
+    sizes: ["10 lb / 4.5 kg retail bag"],
+    packaging: "Branded retail bags, cartons of 4, palletised",
+    regions: ["USA", "Europe", "Gulf States"],
+    availability: "In Stock",
+    moq: "1 x 40ft container",
+    shipping: "FOB Tema / CIF major ports",
+  },
+  {
+    slug: "bulk-retail-pack",
+    name: "Bulk Retail Pack (4 x 10 lb)",
+    scientificName: "Mixed indigenous hardwood",
+    category: "Charcoal",
+    type: "Lump",
+    grade: "Premium",
+    short: "Master carton of 4 retail bags — wholesale ready.",
+    description:
+      "Wholesale-ready master carton containing four 10 lb retail bags of premium hardwood charcoal. Optimised for grocery, hardware and big-box retail distribution.",
+    image: charcoalBulkPackImg,
+    gallery: [charcoalBulkPackImg, charcoalBagPremiumImg, charcoalBagOpenImg],
+    density: "Fixed carbon ≥ 78%",
+    moisture: "≤ 6%",
+    sizes: ["4 x 10 lb (40 lb / 18 kg) master carton"],
+    packaging: "Branded master carton, palletised",
+    regions: ["USA", "Europe", "UAE"],
+    availability: "In Stock",
+    moq: "1 x 40ft container",
+    shipping: "FOB / CIF — private-label available",
+  },
+  {
+    slug: "hardwood-lump-charcoal",
     name: "Hardwood Lump Charcoal",
     scientificName: "Mixed indigenous hardwood",
     category: "Charcoal",
     type: "Lump",
     grade: "Export Select",
-    short: "High-density lump charcoal, low ash content.",
+    short: "Slow-kilned lump charcoal, high heat and low ash.",
     description:
       "Slow-kilned hardwood charcoal with high carbon content, long burn time, and minimal smoke. The choice of premium grill houses across the Gulf and Europe.",
-    image: charcoalImg,
-    gallery: [charcoalImg, briquettesImg, hexBriquettesImg],
+    image: charcoalBagOpenImg,
+    gallery: [charcoalBagOpenImg, charcoalLumpImg, charcoalBagPremiumImg],
     density: "Fixed carbon ≥ 78%",
     moisture: "≤ 6%",
     sizes: ["20–150mm lump pieces"],
@@ -311,27 +368,6 @@ export const charcoalProducts: Product[] = [
     availability: "In Stock",
     moq: "26 MT (1 x 40ft HC)",
     shipping: "FOB / CIF — full export documentation",
-  },
-  {
-    slug: "coconut-briquettes",
-    name: "Coconut Shell Briquettes",
-    scientificName: "Cocos nucifera",
-    category: "Charcoal",
-    type: "Briquettes",
-    grade: "Premium",
-    short: "Smokeless, long-burning shisha-grade briquettes.",
-    description:
-      "Cube briquettes pressed from 100% coconut shell carbon. Odourless, smokeless, and engineered for the global shisha and BBQ market with consistent burn over 2.5 hours.",
-    image: briquettesImg,
-    gallery: [briquettesImg, hexBriquettesImg, charcoalImg],
-    density: "Fixed carbon ≥ 80%",
-    moisture: "≤ 5%",
-    sizes: ["25x25x25mm cubes (standard)", "Hexagonal & flat options"],
-    packaging: "1kg inner / 10kg master carton, branded available",
-    regions: ["UAE", "Saudi Arabia", "Germany", "USA"],
-    availability: "In Stock",
-    moq: "20 MT",
-    shipping: "FOB / CIF — private-label available",
   },
   {
     slug: "hexagonal-briquettes",
@@ -343,8 +379,8 @@ export const charcoalProducts: Product[] = [
     short: "Hex-pressed briquettes, uniform burn for industry use.",
     description:
       "Machine-pressed hexagonal briquettes engineered for consistent 4+ hour burn. Favoured by industrial kitchens, steakhouses, and bulk catering across the Gulf and EU.",
-    image: hexBriquettesImg,
-    gallery: [hexBriquettesImg, briquettesImg, charcoalImg],
+    image: charcoalHexImg,
+    gallery: [charcoalHexImg, charcoalCubeImg, charcoalLumpImg],
     density: "Fixed carbon ≥ 82%",
     moisture: "≤ 5%",
     sizes: ["50mm hex cross-section, 50–80mm lengths"],
@@ -353,6 +389,69 @@ export const charcoalProducts: Product[] = [
     availability: "In Stock",
     moq: "22 MT",
     shipping: "FOB Tema / CIF — private label OK",
+  },
+  {
+    slug: "cube-briquettes",
+    name: "Cube Briquettes",
+    scientificName: "Compressed hardwood blend",
+    category: "Charcoal",
+    type: "Briquettes",
+    grade: "Premium",
+    short: "Uniform cube briquettes for grill and shisha markets.",
+    description:
+      "Precision-pressed cube briquettes deliver an even, predictable burn with low ash. A favourite for shisha lounges and high-volume grill kitchens.",
+    image: charcoalCubeImg,
+    gallery: [charcoalCubeImg, charcoalHexImg, charcoalCoconutImg],
+    density: "Fixed carbon ≥ 80%",
+    moisture: "≤ 5%",
+    sizes: ["25x25x25mm cubes"],
+    packaging: "1kg inner / 10kg master carton, branded available",
+    regions: ["UAE", "Saudi Arabia", "Germany"],
+    availability: "In Stock",
+    moq: "20 MT",
+    shipping: "FOB / CIF — private-label available",
+  },
+  {
+    slug: "hardwood-lump-bulk",
+    name: "Bulk Hardwood Lump",
+    scientificName: "Mixed indigenous hardwood",
+    category: "Charcoal",
+    type: "Lump",
+    grade: "Export Select",
+    short: "Industrial-grade lump charcoal in bulk kraft bags.",
+    description:
+      "Large-format hardwood lump charcoal for industrial kitchens and wholesale distribution. Dense, slow burning and consistent batch to batch.",
+    image: charcoalLumpImg,
+    gallery: [charcoalLumpImg, charcoalBagOpenImg, charcoalBagPremiumImg],
+    density: "Fixed carbon ≥ 78%",
+    moisture: "≤ 6%",
+    sizes: ["40–180mm lump pieces"],
+    packaging: "15kg / 20kg / 25kg kraft bags, palletised",
+    regions: ["Europe", "Gulf States", "Asia"],
+    availability: "In Stock",
+    moq: "26 MT (1 x 40ft HC)",
+    shipping: "FOB / CIF — full export documentation",
+  },
+  {
+    slug: "coconut-shell-charcoal",
+    name: "Coconut Shell Charcoal",
+    scientificName: "Cocos nucifera",
+    category: "Charcoal",
+    type: "Coconut",
+    grade: "Premium",
+    short: "Smokeless coconut shell carbon, shisha-grade.",
+    description:
+      "Carbonised coconut shell pieces — odourless, smokeless, and engineered for the global shisha and specialty BBQ market with consistent long burn.",
+    image: charcoalCoconutImg,
+    gallery: [charcoalCoconutImg, charcoalCubeImg, charcoalHexImg],
+    density: "Fixed carbon ≥ 80%",
+    moisture: "≤ 5%",
+    sizes: ["Flake & granulated grades"],
+    packaging: "10kg / 25kg sacks, branded available",
+    regions: ["UAE", "Saudi Arabia", "Germany", "USA"],
+    availability: "In Stock",
+    moq: "20 MT",
+    shipping: "FOB / CIF — private-label available",
   },
   {
     slug: "restaurant-grade-charcoal",
@@ -364,8 +463,8 @@ export const charcoalProducts: Product[] = [
     short: "Chef-selected lump charcoal for premium grill kitchens.",
     description:
       "Chef-selected, low-spark lump charcoal kilned to deliver clean high heat with minimal ash. The standard for Michelin-recognised grill houses and steakhouses worldwide.",
-    image: restaurantCharcoalImg,
-    gallery: [restaurantCharcoalImg, charcoalImg, briquettesImg],
+    image: charcoalRestaurantImg,
+    gallery: [charcoalRestaurantImg, charcoalLumpImg, charcoalBagOpenImg],
     density: "Fixed carbon ≥ 80%",
     moisture: "≤ 5%",
     sizes: ["40–120mm graded lump"],
@@ -376,6 +475,7 @@ export const charcoalProducts: Product[] = [
     shipping: "FOB / CIF — private-label available",
   },
 ];
+
 
 // Backwards compatibility (timber-only on the main marketing site)
 export const products: Product[] = timberProducts;

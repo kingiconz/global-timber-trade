@@ -14,6 +14,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CharcoalRouteImport } from './routes/charcoal'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CharcoalProductsRouteImport } from './routes/charcoal.products'
 
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
@@ -40,41 +41,68 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CharcoalProductsRoute = CharcoalProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => CharcoalRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/charcoal': typeof CharcoalRoute
+  '/charcoal': typeof CharcoalRouteWithChildren
   '/contact': typeof ContactRoute
   '/products': typeof ProductsRoute
+  '/charcoal/products': typeof CharcoalProductsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/charcoal': typeof CharcoalRoute
+  '/charcoal': typeof CharcoalRouteWithChildren
   '/contact': typeof ContactRoute
   '/products': typeof ProductsRoute
+  '/charcoal/products': typeof CharcoalProductsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/charcoal': typeof CharcoalRoute
+  '/charcoal': typeof CharcoalRouteWithChildren
   '/contact': typeof ContactRoute
   '/products': typeof ProductsRoute
+  '/charcoal/products': typeof CharcoalProductsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/charcoal' | '/contact' | '/products'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/charcoal'
+    | '/contact'
+    | '/products'
+    | '/charcoal/products'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/charcoal' | '/contact' | '/products'
-  id: '__root__' | '/' | '/about' | '/charcoal' | '/contact' | '/products'
+  to:
+    | '/'
+    | '/about'
+    | '/charcoal'
+    | '/contact'
+    | '/products'
+    | '/charcoal/products'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/charcoal'
+    | '/contact'
+    | '/products'
+    | '/charcoal/products'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  CharcoalRoute: typeof CharcoalRoute
+  CharcoalRoute: typeof CharcoalRouteWithChildren
   ContactRoute: typeof ContactRoute
   ProductsRoute: typeof ProductsRoute
 }
@@ -116,26 +144,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/charcoal/products': {
+      id: '/charcoal/products'
+      path: '/products'
+      fullPath: '/charcoal/products'
+      preLoaderRoute: typeof CharcoalProductsRouteImport
+      parentRoute: typeof CharcoalRoute
+    }
   }
 }
+
+interface CharcoalRouteChildren {
+  CharcoalProductsRoute: typeof CharcoalProductsRoute
+}
+
+const CharcoalRouteChildren: CharcoalRouteChildren = {
+  CharcoalProductsRoute: CharcoalProductsRoute,
+}
+
+const CharcoalRouteWithChildren = CharcoalRoute._addFileChildren(
+  CharcoalRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  CharcoalRoute: CharcoalRoute,
+  CharcoalRoute: CharcoalRouteWithChildren,
   ContactRoute: ContactRoute,
   ProductsRoute: ProductsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
