@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useRef, useState } from "react";
-import { ArrowRight, ChevronDown, Flame, Globe2, ShieldCheck, Truck, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { ArrowRight, ChevronDown, Flame, Globe2, ShieldCheck, Truck, Mail, Phone, MapPin, MessageCircle, X } from "lucide-react";
 import charcoalImg from "@/assets/product-charcoal.jpg";
 import { charcoalProducts } from "@/data/products";
 import { ProductCard } from "@/components/site/ProductCard";
@@ -43,6 +43,7 @@ function CharcoalPage() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 1], [1, 0]);
   const [active, setActive] = useState<Product | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   return (
     <div className="relative">
@@ -178,13 +179,14 @@ function CharcoalPage() {
             ))}
           </StaggerGroup>
           <div className="mt-14 flex justify-center">
-            <Link
-              to="/charcoal/products"
+            <button
+              type="button"
+              onClick={() => setShowAll(true)}
               className="group inline-flex items-center gap-3 px-8 py-4 text-xs uppercase tracking-[0.25em] bg-gradient-gold text-primary-foreground rounded-sm hover:shadow-glow transition-shadow"
             >
               See More Products
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -248,6 +250,56 @@ function CharcoalPage() {
       </footer>
 
       <ProductModal product={active} onClose={() => setActive(null)} />
+
+      <AnimatePresence>
+        {showAll && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[55] flex items-center justify-center p-4 sm:p-8"
+          >
+            <div className="absolute inset-0 bg-ink/85 backdrop-blur-md" onClick={() => setShowAll(false)} />
+            <motion.div
+              initial={{ y: 40, opacity: 0, scale: 0.98 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: 40, opacity: 0, scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 240, damping: 28 }}
+              className="relative glass-strong border border-border rounded-md w-full max-w-6xl max-h-[92vh] overflow-y-auto shadow-elevated p-6 sm:p-10"
+            >
+              <button
+                onClick={() => setShowAll(false)}
+                className="absolute top-4 right-4 z-10 h-10 w-10 rounded-full glass inline-flex items-center justify-center text-foreground hover:text-gold transition-colors"
+                aria-label="Close"
+              >
+                <X size={18} />
+              </button>
+              <p className="text-[11px] uppercase tracking-[0.35em] text-gold">All Charcoal Products</p>
+              <h2 className="font-display text-3xl sm:text-4xl mt-3">Browse the full <span className="text-gold-gradient italic">charcoal range</span></h2>
+              <p className="mt-3 text-sm text-muted-foreground">Click any image to view product details.</p>
+              <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                {charcoalProducts.map((p) => (
+                  <button
+                    key={p.slug}
+                    onClick={() => { setShowAll(false); setActive(p); }}
+                    className="group relative aspect-square overflow-hidden rounded-sm bg-[#0d0907] border border-border hover:border-gold transition-colors"
+                  >
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover brightness-[.78] contrast-[1.05] transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-ink via-ink/70 to-transparent">
+                      <p className="text-xs font-display text-foreground leading-tight">{p.name}</p>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
