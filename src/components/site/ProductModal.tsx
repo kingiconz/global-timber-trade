@@ -1,13 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Download, MessageCircle, FileText } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import type { Product } from "@/data/products";
 import { Link } from "@tanstack/react-router";
 
 export function ProductModal({ product, onClose }: { product: Product | null; onClose: () => void }) {
-  const [active, setActive] = useState(0);
-
-  useEffect(() => { setActive(0); }, [product]);
+  useEffect(() => {}, [product]);
 
   useEffect(() => {
     if (!product) return;
@@ -47,29 +45,15 @@ export function ProductModal({ product, onClose }: { product: Product | null; on
 
             <div className="grid lg:grid-cols-2">
               <div className="bg-ink p-6 lg:p-10">
-                <div className="aspect-square rounded-sm overflow-hidden bg-card">
+                <div className="aspect-square rounded-sm overflow-hidden bg-[#0d0907]">
                   <motion.img
-                    key={active}
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5 }}
-                    src={product.gallery[active]}
+                    src={product.image}
                     alt={product.name}
-                    className="h-full w-full object-cover"
+                    className={`h-full w-full object-cover ${product.category === "Charcoal" ? "brightness-[.78] contrast-[1.05]" : ""}`}
                   />
-                </div>
-                <div className="mt-4 flex gap-3">
-                  {product.gallery.map((g, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActive(i)}
-                      className={`h-16 w-16 rounded-sm overflow-hidden border-2 transition-all ${
-                        active === i ? "border-gold" : "border-transparent opacity-60 hover:opacity-100"
-                      }`}
-                    >
-                      <img src={g} alt="" className="h-full w-full object-cover" />
-                    </button>
-                  ))}
                 </div>
               </div>
 

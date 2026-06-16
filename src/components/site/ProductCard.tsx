@@ -10,12 +10,12 @@ export function ProductCard({ product, onOpen }: { product: Product; onOpen: (p:
       transition={{ type: "spring", stiffness: 300, damping: 24 }}
       className="group relative text-left glass rounded-md overflow-hidden hover:shadow-glow transition-shadow duration-500"
     >
-      <div className="aspect-[4/5] overflow-hidden relative">
+      <div className="aspect-[4/5] overflow-hidden relative bg-[#0d0907]">
         <img
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110"
+          className={`h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-110 ${product.category === "Charcoal" ? "brightness-[.78] contrast-[1.05]" : ""}`}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent opacity-90" />
         <span className="absolute top-4 left-4 text-[10px] uppercase tracking-[0.25em] px-2.5 py-1 bg-gradient-gold text-primary-foreground rounded-sm">
