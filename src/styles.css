@@ -147,6 +147,8 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    line-height: 1.25;
+    padding-bottom: 0.15em;
   }
   .shadow-glow { box-shadow: var(--shadow-glow); }
   .shadow-elevated { box-shadow: var(--shadow-elevated); }
