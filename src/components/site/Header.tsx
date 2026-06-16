@@ -32,7 +32,7 @@ export function Header() {
           <span className="relative inline-flex h-8 w-8 sm:h-9 sm:w-9 items-center justify-center rounded-sm bg-gradient-gold text-primary-foreground font-display text-base sm:text-lg font-bold shadow-glow flex-shrink-0">
             B
           </span>
-          <span className="font-display text-base sm:text-xl tracking-wide truncate">
+          <span className="font-display text-base sm:text-xl tracking-wide">
             Black Woodpecker Limited
           </span>
         </Link>

@@ -27,13 +27,13 @@ function CharcoalProductsPage() {
     <div className="relative min-h-screen">
       {/* Header */}
       <header className="fixed top-0 inset-x-0 z-50 glass-strong border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-16 sm:h-20">
-          <Link to="/charcoal" className="flex items-center gap-3 min-w-0">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-3 h-16 sm:h-20">
+          <Link to="/charcoal" className="flex items-center gap-3">
             <span className="relative inline-flex h-9 w-9 items-center justify-center rounded-sm bg-gradient-gold text-primary-foreground font-display text-lg font-bold shadow-glow flex-shrink-0">
               B
             </span>
-            <div className="flex flex-col leading-none min-w-0">
-              <span className="font-display text-base sm:text-xl tracking-wide truncate">Black Woodpecker</span>
+            <div className="flex flex-col leading-none">
+              <span className="font-display text-base sm:text-xl tracking-wide">Black Woodpecker</span>
               <span className="text-[10px] uppercase tracking-[0.3em] text-gold mt-1">Charcoal Division</span>
             </div>
           </Link>
