@@ -134,6 +134,8 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    line-height: 1.25;
+    padding-bottom: 0.15em;
   }
   .bg-gradient-hero { background: var(--gradient-hero); }
   .bg-gradient-gold { background: var(--gradient-gold); }
